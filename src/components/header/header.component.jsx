@@ -11,8 +11,9 @@ import {
   OptionLink,
 } from "./header.styles";
 import CartIcon from "../cart-icon/cart-icon.component";
+import CartDropdown from "../cart-dropdown/cart-dropdown.component";
 
-const Header = ({ currentUser }) => (
+const Header = ({ currentUser, hidden }) => (
   <HeaderContainer>
     <LogoContainer to="/">
       <Logo className="logo" />
@@ -26,14 +27,16 @@ const Header = ({ currentUser }) => (
         </OptionLink>
       ) : (
         <OptionLink to="/signin">SIGN IN</OptionLink>
-			)}
-			<CartIcon />
+      )}
+      <CartIcon />
     </OptionsContainer>
+    {hidden ? null : <CartDropdown />}
   </HeaderContainer>
 );
 
-const mapStateToProps = (state) => ({
-	currentUser: state.user.currentUser
-})
+const mapStateToProps = ({ user: { currentUser }, cart: { hidden } }) => ({
+  currentUser,
+  hidden,
+});
 
 export default connect(mapStateToProps)(Header);

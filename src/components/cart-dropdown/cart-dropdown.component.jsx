@@ -11,7 +11,6 @@ import {
 } from "./cart-dropdown.styles";
 import CartItem from "../cart-item/cart-item.component";
 import { selectCartItems } from "../../redux/cart/cart.selectors";
-import { dispatch } from "../../../../../../../Library/Caches/typescript/3.5/node_modules/rxjs/internal/observable/pairs";
 import { toggleCartHidden } from "../../redux/cart/cart.actions";
 
 const CartDropdown = ({ cartItems, history, dispatch }) => (

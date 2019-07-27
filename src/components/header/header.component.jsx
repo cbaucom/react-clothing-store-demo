@@ -1,34 +1,37 @@
-import React from 'react'
+import React from "react";
 
 import { auth } from "../../firebase/firebase.utils";
-import {ReactComponent as Logo} from '../../assets/crown.svg'
+import { ReactComponent as Logo } from "../../assets/crown.svg";
+import { connect } from "react-redux";
+
 import {
-	HeaderContainer,
-	LogoContainer,
-	OptionsContainer,
-	OptionLink,
-	OptionDiv
-} from './header.styles';
+  HeaderContainer,
+  LogoContainer,
+  OptionsContainer,
+  OptionLink,
+} from "./header.styles";
 
-const Header = ({currentUser}) => (
-	<HeaderContainer>
-		<LogoContainer to="/">
-			<Logo className="logo" />
-		</LogoContainer>
-		<OptionsContainer>
-			<OptionLink to="/shop">
-				SHOP
-			</OptionLink>
-			<OptionLink to="/contact">
-				CONTACT
-			</OptionLink>
-			{currentUser ? (
-				<OptionDiv onClick={() => auth.signOut()}>SIGN OUT {currentUser.email}</OptionDiv>
-			) : (
-				<OptionLink to="/signin">SIGN IN</OptionLink>
-			)}
-		</OptionsContainer>
-	</HeaderContainer>
-)
+const Header = ({ currentUser }) => (
+  <HeaderContainer>
+    <LogoContainer to="/">
+      <Logo className="logo" />
+    </LogoContainer>
+    <OptionsContainer>
+      <OptionLink to="/shop">SHOP</OptionLink>
+      <OptionLink to="/contact">CONTACT</OptionLink>
+      {currentUser ? (
+        <OptionLink as="div" onClick={() => auth.signOut()}>
+          {currentUser.displayName} > SIGN OUT
+        </OptionLink>
+      ) : (
+        <OptionLink to="/signin">SIGN IN</OptionLink>
+      )}
+    </OptionsContainer>
+  </HeaderContainer>
+);
 
-export default Header
+const mapStateToProps = (state) => ({
+	currentUser: state.user.currentUser
+})
+
+export default connect(mapStateToProps)(Header);

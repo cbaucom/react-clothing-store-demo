@@ -10,6 +10,7 @@ import {
   OptionsContainer,
   OptionLink,
 } from "./header.styles";
+import CartIcon from "../cart-icon/cart-icon.component";
 
 const Header = ({ currentUser }) => (
   <HeaderContainer>
@@ -25,7 +26,8 @@ const Header = ({ currentUser }) => (
         </OptionLink>
       ) : (
         <OptionLink to="/signin">SIGN IN</OptionLink>
-      )}
+			)}
+			<CartIcon />
     </OptionsContainer>
   </HeaderContainer>
 );

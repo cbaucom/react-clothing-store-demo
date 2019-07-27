@@ -1,31 +1,34 @@
 import React from 'react'
-import { Link } from "react-router-dom";
 
 import { auth } from "../../firebase/firebase.utils";
-
 import {ReactComponent as Logo} from '../../assets/crown.svg'
-
-import './header.styles.scss'
+import {
+	HeaderContainer,
+	LogoContainer,
+	OptionsContainer,
+	OptionLink,
+	OptionDiv
+} from './header.styles';
 
 const Header = ({currentUser}) => (
-	<div className="header">
-		<Link className="logo-container" to="/">
+	<HeaderContainer>
+		<LogoContainer to="/">
 			<Logo className="logo" />
-		</Link>
-		<div className="options">
-			<Link className="option" to="/shop">
+		</LogoContainer>
+		<OptionsContainer>
+			<OptionLink to="/shop">
 				SHOP
-			</Link>
-			<Link className="option" to="/contact">
+			</OptionLink>
+			<OptionLink to="/contact">
 				CONTACT
-			</Link>
+			</OptionLink>
 			{currentUser ? (
-				<div className="option" onClick={() => auth.signOut()}>SIGN OUT {currentUser.email}</div>
+				<OptionDiv onClick={() => auth.signOut()}>SIGN OUT {currentUser.email}</OptionDiv>
 			) : (
-				<Link className="option" to="/signin">SIGN IN</Link>
+				<OptionLink to="/signin">SIGN IN</OptionLink>
 			)}
-		</div>
-	</div>
+		</OptionsContainer>
+	</HeaderContainer>
 )
 
 export default Header

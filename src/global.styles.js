@@ -3,7 +3,7 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyle = createGlobalStyle`
 	body {
 		font-family: 'Open Sans Condensed';
-		padding: 1rem 2rem;
+		padding: 1rem;
 
 		@media screen and (max-width: 800px) {
 			padding: 10px;

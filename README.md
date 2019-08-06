@@ -7,7 +7,7 @@ This project is built with React, Redux, Firebase, and Stripe. You will need to 
 ### Running locally
 
 - Clone this repo via `git clone git@github.com:cbaucom/react-clothing-store-demo.git`
-- Setup Firebase and Stripe accounts and grab config information as noted in the instructions below before proceeding.
+- Setup [Firebase](#firebase) and [Stripe](#stripe) accounts and grab config information as noted in the instructions below before proceeding.
 - `cd react-clothing-store-demo` and install server dependencies via `yarn install`
 - `cd client` and install client dependencies via `yarn install`
 - `cd ..` to return to the base directory

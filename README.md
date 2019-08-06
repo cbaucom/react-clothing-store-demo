@@ -1,6 +1,6 @@
 # React Sample E-Commerce Clothing Store
 
-This project is built with React, Redux, Firebase, and Stripe. You will need to setup your own Firebase and Stripe accounts if you want to use this app yourself.
+This project is built with React, Redux, Styled Components, Firebase, and Stripe. You will need to setup your own Firebase and Stripe accounts if you want to use this app yourself.
 
 ## Instructions
 

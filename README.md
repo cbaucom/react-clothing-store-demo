@@ -24,7 +24,7 @@ Setup a new [Firebase project](https://console.firebase.google.com) and update `
 
 ### Stripe
 
-Sign up for a Stripe account if you haven't already, login and navigate to the Developers > API Keys section. Grab your Publishable key and define it in `client/src/components/stripe-button/stripe-button.component.jsx` as `publishableKey`
+Sign up for a [Stripe account](https://dashboard.stripe.com) if you haven't already, login and navigate to the Developers > API Keys section. Grab your Publishable key and define it in `client/src/components/stripe-button/stripe-button.component.jsx` as `publishableKey`
 
 In the base directory of the project, create a `.env` file and define
 `STRIPE_SECRET_KEY=your_secret_test_code_here`
